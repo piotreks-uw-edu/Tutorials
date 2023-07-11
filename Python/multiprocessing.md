@@ -4,13 +4,14 @@ import os
 import time
 
 def func():
-    print "hello from process %s" % os.getpid()
+    print("hello from process %s" % os.getpid())
     time.sleep(1)
 
-proc = multiprocessing.Process(target=func, args=())
-proc.start()
-proc = multiprocessing.Process(target=func, args=())
-proc.start()
+if __name__ == '__main__':
+    proc = multiprocessing.Process(target=func)
+    proc.start()
+    proc2 = multiprocessing.Process(target=func)
+    proc2.start()
 
 # Multiprocessing has its own multiprocessing.Queue which handles interprocess communication. #
 # Also has its own versions of Lock, RLock, Semaphore # 
@@ -22,27 +23,17 @@ print parent_conn.recv()
 
 # Pooling - a processing pool contains worker processes with only a configured number running at one time. #
 from multiprocessing import Pool
-pool = Pool(processes=4)
+import os
+import time
 
-# Pooling example #
-from multiprocessing import Pool
-def f(x):
-    return x*x
+def func(_):  # Note: Pool.map expects a function that takes a single argument. Hence we include a dummy parameter '_'.
+    print("hello from process %s" % os.getpid())
+    time.sleep(1)
+
 if __name__ == '__main__':
-    pool = Pool(processes=4)
+    with Pool(processes=2) as pool:  # Create a Pool with 2 processes
+        pool.map(func, range(2))  # Apply 'func' 2 times
 
-    result = pool.apply_async(f, (10,))
-    print(result.get(timeout=1))
-    print(pool.map(f, range(10)))
-
-    it = pool.imap(f, range(10))
-    print(it.next())
-    print(it.next())
-    print(it.next(timeout=1))
-
-    import time
-    result = pool.apply_async(time.sleep, (10,))
-    print(result.get(timeout=1))
 	
 # ThreadPool. Threading also has a pool. Confusingly, it lives in the multiprocessing module. #
 from multiprocessing.pool import ThreadPool
