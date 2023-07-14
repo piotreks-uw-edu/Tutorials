@@ -1,6 +1,13 @@
 # running a unittest test
 python -m unittest test2
 
+# run only one test
+py -m unittest test_main.UserTests.test_add_users_called
+
+# run all class tests
+python -m unittest test_main.UserTests
+
+
 # mock - test calling a method inside another method
 ## example 1
 	def test_add_users_called(self):
