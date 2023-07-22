@@ -71,3 +71,58 @@ for person in people:
 		
 # close the connection #
 db.close()
+
+# DATASET #
+## Create an in-memory SQLite database. ##
+db = DataSet('sqlite:///:memory:')
+
+## Get a table reference, creating the table if it does not exist. ##
+table = db['users']
+
+## Insert into a table ##
+table.insert(name='Huey', age=3, color='white')
+
+## Update ##
+table.update(name='Huey', gender='male', columns=['name'])
+
+## Update all records. If the column does not exist, it will be created. ##
+table.update(favorite_orm='peewee')
+
+## Using transactions ##
+table = db['users']
+with db.transaction() as txn:
+    table.insert(name='Charlie')
+
+    with db.transaction() as nested_txn:
+        # Set Charlie's favorite ORM to Django.
+        table.update(name='Charlie', favorite_orm='django', columns=['name'])
+
+        # jk/lol
+        nested_txn.rollback()
+		
+## To retrieve all rows, you can use the all() method ##
+### Retrieve all the users. ###
+users = db['user'].all()
+
+### We can iterate over all rows without calling `.all()` ###
+for user in db['user']:
+    print(user['name'])
+
+## Import data from a CSV file into a new table. Columns will be automatically ##
+## created for each field in the CSV file. ##
+new_table = db['stats']
+new_table.thaw(format='csv', filename='monthly_stats.csv')
+
+
+
+
+
+
+
+
+
+
+
+
+
+

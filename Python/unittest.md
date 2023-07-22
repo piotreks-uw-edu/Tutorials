@@ -1,3 +1,6 @@
+# run all test in a folder
+python -m unittest
+
 # running a unittest test
 python -m unittest test2
 
