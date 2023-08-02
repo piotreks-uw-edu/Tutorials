@@ -113,6 +113,23 @@ for user in db['user']:
 new_table = db['stats']
 new_table.thaw(format='csv', filename='monthly_stats.csv')
 
+## A minimal data-loading script might look like this: ##
+from playhouse.dataset import DataSet
+
+db = DataSet('sqlite:///:memory:')
+
+table = db['sometable']
+table.insert(name='Huey', age=3)
+table.insert(name='Mickey', age=5, gender='male')
+
+huey = table.find_one(name='Huey')
+print(huey)
+# {'age': 3, 'gender': None, 'id': 1, 'name': 'Huey'}
+
+for obj in table:
+    print(obj)
+# {'age': 3, 'gender': None, 'id': 1, 'name': 'Huey'}
+# {'age': 5, 'gender': 'male', 'id': 2, 'name': 'Mickey'}
 
 
 

@@ -13,9 +13,6 @@ Enter-PSSession -ComputerName $ComputerName
 # check a command is installed
 Get-Command -Noun *az*
 
-# install Azure module and overrride any existing command
-Install-Module -Name Az -Force -AllowClobber
-
 # help showing all commands with 'connect'
 Get-Command -Verb connect
 
@@ -25,6 +22,10 @@ Connect-AzAccount
 # help showing all commands with 'get' and 'user'
 Get-Command -Verb get -Noun *user*
 
-# get Active Directory users
-Get-AzADUser
+# resolve a Domain Name System (DNS) domain name or IP address to its respective DNS record
+Resolve-DnsName -Name microsoft.com
+
+
+
+
 
