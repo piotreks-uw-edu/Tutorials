@@ -16,15 +16,17 @@ Get-Command -Noun *az*
 # help showing all commands with 'connect'
 Get-Command -Verb connect
 
-# connect to an Azure account
-Connect-AzAccount
-
 # help showing all commands with 'get' and 'user'
 Get-Command -Verb get -Noun *user*
 
 # resolve a Domain Name System (DNS) domain name or IP address to its respective DNS record
 Resolve-DnsName -Name microsoft.com
 
+# test connection
+Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
+
+# check public ip address
+(Invoke-WebRequest ifconfig.me/ip).Content.Trim() 
 
 
 
