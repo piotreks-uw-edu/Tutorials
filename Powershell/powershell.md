@@ -28,6 +28,9 @@ Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detaile
 # check public ip address
 (Invoke-WebRequest ifconfig.me/ip).Content.Trim() 
 
+# connect to Azure
+Login Az-Account
+
 
 
 

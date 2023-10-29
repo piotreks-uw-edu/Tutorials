@@ -3,7 +3,32 @@ pip install flask
 pip install flask-restful
 pip install sqlalchemy
 
-# example #
+# the simplest example #
+import os
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/hello/')
+def hello_world():
+    return "Hello, World!"
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+
+# passing an argument #
+@app.route('/hello/<name>/')
+def hello_world(name):
+    return "Hello, {}!".format(name)
+	
+# using index() function #
+@app.route('/')
+def index():
+	return 'Hello, Flask!'
+
+
+# simple example using API#
 from flask import Flask
 from flask_restful import Resource, Api 
 from sqlalchemy import createengine 
@@ -53,5 +78,22 @@ if __name__ == "__main__":
 	
 # accessing #
 127.0.0.1:5002/employees
-127.0.0.1:5002/tracks"
+127.0.0.1:5002/tracks
 127.0.0.1:5002/employees/<employee_id> (substituting an employee number where shown)
+
+
+# string of 16 random bytes #
+import os
+random_bytes = os.urandom(16)
+## b'\xf4\x9f\xb6\xe2Z\x0b@\xa6\x94M\x16\x9b\x85\xb1\xeb\xd9'
+
+# encode random bytes with base64#
+import os, base64
+code = base64.b32encode(os.urandom(8)).decode().strip("=")
+
+# get secret key from enviroment #
+app.secret_key = os.environ.get('SECRET_KEY').encode()
+
+# set enviroment variable for session in Powershell #
+$env:SECRET_KEY = "KjJPe35tQKY2YLRzm7vhm3aJdqqh8YHR"
+

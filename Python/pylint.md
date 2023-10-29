@@ -10,7 +10,7 @@ class PylintDemo():
 ...
 
 # install
-py install pylint
+pip install pylint
 
 # run on a module
 py -m pylint .\calculator.py
