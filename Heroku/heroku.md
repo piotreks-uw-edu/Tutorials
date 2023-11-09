@@ -25,3 +25,16 @@ git push heroku master               # If you have any changes or files to add, 
 heroku addons:create heroku-postgresql:mini
 heroku run python setup.py
 heroku open
+
+
+
+
+# Depolying Flask application
+git init
+heroku create
+pip freeze > requirements
+git remote -version
+git add .
+git commit -a -m "Initial commit"
+git push heroku master
+heroku open

@@ -17,3 +17,21 @@ val sumOfDoubledNums = doubledNums.reduce( (x,y) => x+y )
 val plays = Seq(
     "tamingoftheshrew", "comedyoferrors", "loveslabourslost", "midsummersnightsdream",
     "merrywivesofwindsor", "muchadoaboutnothing", "asyoulikeit", "twelfthnight")
+	
+# create an RDD from a local Scala collection , distribute the local collection across the nodes of the Spark cluster
+val someNums = sc.parallelize(1 to 25)
+
+# retrieves the first n elements from the RDD
+someNums.take(5)
+
+# returns a new collection with only those elements for which the predicate returns 'true'.
+val evenNums = someNums.filter( x => (x%2==0) )
+
+# Assing a file and count all it's words
+val theBestWords = sc.textFile("dbfs:/fall_2023_users/piotreks/words")
+theBestWords.count
+
+
+
+
+	
