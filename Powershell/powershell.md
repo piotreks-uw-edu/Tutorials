@@ -34,6 +34,13 @@ Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detaile
 ### connect to Azure
 Login Az-Account
 
+### check if a module exists
+Get-Module -ListAvailable -Name 'SqlServer'
+
+### installing a module
+Install-Module SqlServer
+
+### 
 
 
 

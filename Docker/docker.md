@@ -13,7 +13,13 @@ sudo docker image ls
 
 ### install an image container, ‘-it’ means to run the container in interactive mode, with a terminal attached 
 ### so that we’ll be able to type commands inside the container
-sudo docker run -it davisengeler/docker-scala
+sudo docker run -it --rm davisengeler/docker-scala
+
+### run docker container with own name
+sudo docker run -it --name your_custom_name image_name
+
+### If you have a Docker container that exists but is not currently running
+docker start training
 
 ### enter the shell of a running Docker container
 sudo docker exec -it quizzical_diffie bash
@@ -32,3 +38,15 @@ sudo docker ps --all
 
 ### alternative to 'sudo docker ps --all', lists all Docker containers, whether they're running or stopped
 sudo docker container ls --all
+
+### delete docker image
+docker rmi -f image_name_or_id
+
+### build docker image
+docker build -t yourimagename:tag .
+
+### docker login
+docker login git.wat.edu.pl:5050
+
+# build an image without explicitly creating a Dockerfile on disk
+docker run -it --name temp-container git.aaaa.edu.pl:3443/debian:11 /bin/bash
