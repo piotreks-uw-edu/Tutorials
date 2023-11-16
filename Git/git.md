@@ -1,3 +1,6 @@
+# set ot change remote repository
+git remote set-url origin https://github.com/user/new-repository.git
+
 #rename commit
 git commit --amend -m "Meassage"
 =======
