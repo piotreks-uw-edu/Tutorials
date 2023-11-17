@@ -1,0 +1,35 @@
+## Extended Events
+Extended Events (XEvents) to potężne i elastyczne narzędzie w SQL Server, które można wykorzystać do monitorowania wydajności. Jest to system, który pozwala na śledzenie i zbieranie danych o różnych zdarzeniach, które zachodzą w silniku bazy danych. Oto jak można użyć Extended Events do monitorowania wydajności:
+
+### Łatwe do Dostosowania
+Extended Events pozwalają na precyzyjne dostosowanie tego, co chcesz monitorować, co pozwala na minimalizację obciążenia wydajnościowego w porównaniu z innymi metodami, takimi jak SQL Trace.
+
+### Niskie Obciążenie Wydajnościowe
+Zaprojektowane, by wpływać na system w jak najmniejszym stopniu, co jest kluczowe przy monitorowaniu produkcji.
+
+### Szeroki Zakres Zdarzeń
+Możesz zbierać dane z szerokiego zakresu zdarzeń, w tym zapytań, błędów, blokad, operacji I/O, zmian konfiguracji i wiele innych.
+
+### Sesje Śledzenia
+Możesz tworzyć sesje śledzenia, które specyficznie rejestrują tylko te zdarzenia, które są dla Ciebie interesujące.
+
+### Analiza na Żywo lub Zbieranie Danych
+Extended Events pozwalają na analizę w czasie rzeczywistym lub na zbieranie danych do późniejszej analizy. Możesz wyeksportować dane do pliku lub przeglądać je za pomocą narzędzi takich jak SQL Server Management Studio (SSMS).
+
+### Integracja z Narzędziami
+Możesz używać danych z Extended Events w innych narzędziach, jak Power BI czy Excel, do tworzenia zaawansowanych analiz i raportów.
+
+### Szerokie Możliwości Filtracji
+Daje możliwość stosowania zaawansowanych filtrów, co pozwala na śledzenie tylko tych zdarzeń, które spełniają określone kryteria.
+
+### Wykrywanie Wąskich Gardeł
+Pomaga w identyfikacji wąskich gardeł i problemów wydajnościowych poprzez śledzenie zdarzeń, które mogą na nie wskazywać, jak długie czasy wykonania zapytań czy częste blokady.
+
+### Wsparcie dla Historii Zdarzeń
+Możesz konfigurować sesje, aby przechowywały historię zdarzeń, co umożliwia analizę trendów i wzorców wydajności w czasie.
+
+### Dostosowywanie do Środowiska
+Extended Events umożliwiają dostosowanie monitoringu do specyfiki i wymagań Twojego środowiska SQL Server.
+- wybrór zdarzeń do monitorowania
+- filtracja zdarzeń
+- konfiguracja akcji (np. zapisywanie do pliku, wysyłanie email)

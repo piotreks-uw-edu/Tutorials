@@ -18,3 +18,9 @@ SHOW PROCESSLIST
 
 ### statistics about the server operations
 SHOW STATUS 
+
+### start the server
+sudo service mariadb start
+
+### restart the server
+sudo service mariadb restart

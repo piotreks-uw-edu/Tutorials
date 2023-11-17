@@ -1,0 +1,18 @@
+## Poziomy izolacji w SQL Server:
+
+### READ UNCOMMITTED
+Jest to najniższy poziom izolacji, który pozwala na odczyt niezatwierdzonych zmian, co może prowadzić do zjawiska "brudnego odczytu". Transakcje na tym poziomie nie czekają na zwolnienie blokad związanych z odczytem, co może zwiększać wydajność, ale na koszt precyzji danych.
+
+### READ COMMITTED
+Jest to domyślny poziom izolacji w SQL Server. Transakcje na tym poziomie mogą odczytywać tylko dane, które zostały zatwierdzone. Zabezpiecza to przed brudnymi odczytami, ale nie zapobiega innym problemom, jak niepowtarzalne odczyty lub efekt fantomowy.
+
+### REPEATABLE READ
+Ten poziom izolacji zapewnia, że jeśli transakcja odczyta wiersz, żadna inna transakcja nie może zmodyfikować ani usunąć tego wiersza do czasu zakończenia pierwszej transakcji. Zapobiega to niepowtarzalnym odczytom, ale nadal może dojść do efektu fantomowego.
+
+### SNAPSHOT
+Na tym poziomie izolacji, SQL Server używa mechanizmu wersjonowania wierszy do utrzymywania spójnych wersji danych dla każdej transakcji. Transakcje na tym poziomie widzą dane takie, jakie były w momencie ich rozpoczęcia, niezależnie od zmian dokonywanych przez inne transakcje. Zapobiega to brudnym odczytom, niepowtarzalnym odczytom i efektowi fantomowemu.
+
+### SERIALIZABLE
+Jest to najwyższy poziom izolacji, który zapewnia pełną izolację transakcji. Transakcja na tym poziomie działa tak, jakby była jedyną operacją wykonywaną w bazie danych. Zapobiega brudnym odczytom, niepowtarzalnym odczytom i efektowi fantomowemu przez blokowanie zakresów danych, ale może to prowadzić do znacznych opóźnień i blokad.
+
+Warto zauważyć, że wyższe poziomy izolacji zwiększają dokładność danych kosztem potencjalnego wpływu na wydajność i współbieżność transakcji, ponieważ więcej operacji wymaga blokad i może dochodzić do wzrostu liczby konfliktów blokad oraz zakleszczeń. Wybór poziomu izolacji powinien być podyktowany wymaganiami biznesowymi dotyczącymi dokładności danych i wydajności aplikacji.
