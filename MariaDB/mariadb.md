@@ -24,3 +24,10 @@ sudo service mariadb start
 
 ### restart the server
 sudo service mariadb restart
+
+### checking locks
+SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCKS;
+SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCK_WAITS;
+
+### check isolation level
+SELECT @@transaction_isolation;

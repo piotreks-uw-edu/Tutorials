@@ -1,0 +1,11 @@
+
+In SQL Server, the query optimizer may choose between different types of joins based on the data, indexes, and query structure. The three primary join algorithms are nested loops, merge joins, and hash joins:
+
+### Nested Loops Join
+This is the simplest form of join and is used when one of the tables is significantly smaller than the other.
+
+### Merge Join
+Merge join is efficient for larger datasets where both sets are sorted on the join key. 
+
+### Hash Join
+Hash joins are used for larger, unsorted, non-indexed tables.
