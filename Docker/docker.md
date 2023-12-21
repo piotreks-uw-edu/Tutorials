@@ -5,6 +5,9 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 apt-cache policy docker-ce
 
+### install get docker container with scala 
+docker pull davisengeler/docker-scala
+
 ### get a detailed status report about the Docker service #
 sudo systemctl status docker
 
@@ -48,5 +51,12 @@ docker build -t yourimagename:tag .
 ### docker login
 docker login git.wat.edu.pl:5050
 
-# build an image without explicitly creating a Dockerfile on disk
+### build an image without explicitly creating a Dockerfile on disk
 docker run -it --name temp-container git.aaaa.edu.pl:3443/debian:11 /bin/bash
+
+### remove all container, images and cache
+docker system prune -a
+
+### creating a network between two containers on a single host
+docker network create my-network
+

@@ -80,4 +80,14 @@ pip install django
        AND NOT ("blogging_post"."text" LIKE %created% ESCAPE '\')
    )
   
+### Connect to Azure SQL Database
+  DATABASES = {
+    'default': {
+         'ENGINE': 'mssql',
+         'Trusted_Connection': 'no', 
+         'OPTIONS': { 
+             'driver': 'ODBC Driver 17 for SQL Server', 
+             'extra_params': "Authentication=ActiveDirectoryMsi;Encrypt=yes;TrustServerCertificate=no" }
+     }
+}
  
