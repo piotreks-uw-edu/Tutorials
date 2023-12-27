@@ -42,7 +42,7 @@ sudo docker ps --all
 ### alternative to 'sudo docker ps --all', lists all Docker containers, whether they're running or stopped
 sudo docker container ls --all
 
-### delete docker image
+### delete docker image (with forcew)
 docker rmi -f image_name_or_id
 
 ### build docker image
