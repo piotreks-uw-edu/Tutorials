@@ -26,9 +26,6 @@ heroku addons:create heroku-postgresql:mini
 heroku run python setup.py
 heroku open
 
-
-
-
 # Depolying Flask application
 git init
 heroku create
@@ -38,3 +35,12 @@ git add .
 git commit -a -m "Initial commit"
 git push heroku master
 heroku open
+
+
+# Setting variables
+heroku create
+heroku config:set DJANGO_SETTINGS_MODULE=heroku
+heroku config:set SECRET_KEY=NnUdYr28vxncCAuYyppNp33H
+heroku addons:create heroku-postgresql:mini
+heroku config:set DISABLE_COLLECTSTATIC=1
+git push heroku main
