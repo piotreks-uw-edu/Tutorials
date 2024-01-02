@@ -39,8 +39,10 @@ heroku open
 
 # Setting variables
 heroku create
+heroku config:set DJANGO_ADMIN_USERNAME=piotreks
+heroku config:set DJANGO_ADMIN_PASSWORD=Ab12345678
 heroku config:set DJANGO_SETTINGS_MODULE=heroku
-heroku config:set SECRET_KEY=NnUdYr28vxncCAuYyppNp33H
+heroku config:set SECRET_KEY=NnUdYr2888888AuYyppNp33H
 heroku addons:create heroku-postgresql:mini
 heroku config:set DISABLE_COLLECTSTATIC=1
 git push heroku main
