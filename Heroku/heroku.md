@@ -10,6 +10,12 @@ heroku create
 # check configuration
 heroku config
 
+# list apps
+heroku apps
+
+# destro app
+heroku apps:destroy --app app-name
+
 # Push application to heroku
 git init
 heroku create
@@ -44,5 +50,9 @@ heroku config:set DJANGO_ADMIN_PASSWORD=Ab12345678
 heroku config:set DJANGO_SETTINGS_MODULE=heroku
 heroku config:set SECRET_KEY=NnUdYr2888888AuYyppNp33H
 heroku addons:create heroku-postgresql:mini
-heroku config:set DISABLE_COLLECTSTATIC=1
 git push heroku main
+
+
+
+
+heroku config:set DISABLE_COLLECTSTATIC=1
