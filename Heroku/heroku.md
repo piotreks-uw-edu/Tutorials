@@ -42,5 +42,41 @@ heroku create
 heroku config:set DJANGO_SETTINGS_MODULE=heroku
 heroku config:set SECRET_KEY=NnUdYr28vxncCAuYyppNp33H
 heroku addons:create heroku-postgresql:mini
-heroku config:set DISABLE_COLLECTSTATIC=1
 git push heroku main
+
+### optional
+heroku config:set DISABLE_COLLECTSTATIC=1
+
+#create a superuser
+heroku run python manage.py createsuperuser -a radiant-temple-32662
+
+# backup a database
+heroku pg:backups:capture --app radiant-temple-32662
+
+### problems with collect static:
+
+disable the collectstatic during a deploy
+
+heroku config:set DISABLE_COLLECTSTATIC=1
+
+deploy
+
+git push heroku master
+
+run migrations (django 1.10 added at least one)
+
+heroku run python manage.py migrate
+
+run collectstatic using bower
+
+heroku run 'bower install --config.interactive=false;grunt prep;python manage.py collectstatic --noinput'
+
+enable collecstatic for future deploys
+
+heroku config:unset DISABLE_COLLECTSTATIC
+
+try it on your own (optional)
+
+heroku run python manage.py collectstatic
+
+future deploys should work as normal from now on
