@@ -1,9 +1,19 @@
-# set ot change remote repository
-git remote set-url origin https://github.com/user/new-repository.git
+# change remote repository
+git remote set-url --add origin https://github.com/user/new-repository.git
 
-#rename commit
+### add remote repository
+git remote add origin https://github.com/user/new-repository.git
+
+### show differences between branches
+#### when not in branch
+git diff develop origin/develop
+#### whne in branch
+git diff origin/develop
+
+
+# rename commit
 git commit --amend -m "Meassage"
-=======
+
 # 
 git config --global core.excludesfile ~/.gitignore_global
 
