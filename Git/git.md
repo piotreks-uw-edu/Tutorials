@@ -1,4 +1,7 @@
-# change remote repository
+### remove it from the repository 
+git rm --cached settlement-python/.bash_history
+
+### change remote repository
 git remote set-url --add origin https://github.com/user/new-repository.git
 
 ### add remote repository
@@ -10,6 +13,8 @@ git diff develop origin/develop
 #### whne in branch
 git diff origin/develop
 
+### diff showing only files
+git diff --name-only branchA branchB
 
 # rename commit
 git commit --amend -m "Meassage"
