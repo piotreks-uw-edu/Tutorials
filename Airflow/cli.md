@@ -16,8 +16,22 @@ airflow webserver --port 8080
 airflow scheduler
 
 ### optional, start a web server in debug mode in the background
- airflow webserver --debug &
-
+airflow webserver --debug &
 
 ### test tasks (dag_id - task_id - date_in_the_past)
-airflow tasks test forex_data_pipeline is_forex_rates_available 2021-01-01
+airflow tasks test tutorial sleep 2015-06-01
+
+### test the whole dag
+airflow dags test tutorial 2015-06-01
+
+### initialize the database tables
+airflow db migrate
+
+### print the list of active DAGs
+airflow dags list
+
+### prints the list of tasks in the "tutorial" DAG
+airflow tasks list tutorial
+
+### prints the hierarchy of tasks in the "tutorial" DAG
+airflow tasks list tutorial --tree
