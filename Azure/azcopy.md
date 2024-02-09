@@ -12,4 +12,4 @@ echo 'export PATH=azcopy_linux_amd64_10.22.2:$PATH' >> ~/.bashrc
 azcopy login --tenant-id f6b6dd5b-0000-441a-99a0-162ac5060bd2
 
 ### Copy to Azure
-azcopy copy ~/tmp https://sdsdsfall23.blob.core.windows.net/container1--recursive
+azcopy copy ~/tmp https://sdsdsfall23.blob.core.windows.net/container1 --recursive

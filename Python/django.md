@@ -1,6 +1,13 @@
 ### dump data
+```bash
 python manage.py dumpdata --exclude=auth --exclude=contenttypes > data.json
 python manage.py dumpdata quiz > data.json
+```
+
+### load data
+```bash
+python manage.py loaddata data.json
+```
 
 # running tests in bloggin application
 python manage.py test blogging
