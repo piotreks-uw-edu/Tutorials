@@ -1,12 +1,13 @@
 ### dump data
 ```bash
-python manage.py dumpdata --exclude=auth --exclude=contenttypes > data.json
-python manage.py dumpdata quiz > data.json
+python manage.py dumpdata --exclude=auth --exclude=contenttypes > initial_data.json
+python manage.py dumpdata > initial_data.json
+python manage.py dumpdata quiz auth.User > initial_data.json
 ```
 
 ### load data
 ```bash
-python manage.py loaddata data.json
+python manage.py loaddata test_data.json
 ```
 
 # running tests in bloggin application
@@ -38,7 +39,7 @@ py .\manage.py migrate
 django-admin startapp blog
 
 # Run server allowing from anywhere
-py manage.py runserver 0.0.0.0:8000
+python manage.py runserver 0.0.0.0:8000
 
 # start server
 py manage.py runserver

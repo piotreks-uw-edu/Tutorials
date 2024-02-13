@@ -3,7 +3,8 @@ pip install flask
 pip install flask-restful
 pip install sqlalchemy
 
-# the simplest example #
+### the simplest example
+```python
 import os
 from flask import Flask
 
@@ -16,6 +17,7 @@ def hello_world():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
+```
 
 # passing an argument #
 @app.route('/hello/<name>/')
