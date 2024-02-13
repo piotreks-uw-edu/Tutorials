@@ -7,6 +7,8 @@ python -m unittest test2
 # run only one test
 py -m unittest test_main.UserTests.test_add_users_called
 
+python -m unittest tests.test_usos.UsosTester.test_get_person_document
+
 # run all class tests
 python -m unittest test_main.UserTests
 
