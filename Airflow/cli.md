@@ -18,6 +18,9 @@ airflow scheduler
 ### optional, start a web server in debug mode in the background
 airflow webserver --debug &
 
+### check successfull parsing
+python ./dags/tutorial.py
+
 ### test tasks (dag_id - task_id - date_in_the_past)
 airflow tasks test tutorial sleep 2015-06-01
 
@@ -35,3 +38,20 @@ airflow tasks list tutorial
 
 ### prints the hierarchy of tasks in the "tutorial" DAG
 airflow tasks list tutorial --tree
+
+### testing one task (print_date here)
+airflow tasks test tutorial print_date 2015-06-01
+
+### start your backfill on a date range
+airflow dags backfill tutorial \
+    --start-date 2015-06-01 \
+    --end-date 2015-06-07
+
+### add connection to mssql
+airflow connections add 'mssql_server' \
+    --conn-type 'mssql' \
+    --conn-host 'your_host' \
+    --conn-login 'your_login' \
+    --conn-password 'your_password' \
+    --conn-schema 'your_database' \
+    --conn-port 1433
