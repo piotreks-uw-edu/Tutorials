@@ -1,3 +1,6 @@
+### run all tests in a folder
+python -m unittest discover -s tests
+
 # run all test in a folder
 python -m unittest
 

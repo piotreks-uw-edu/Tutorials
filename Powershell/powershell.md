@@ -1,3 +1,6 @@
+### set an alias
+function airflow { docker-compose run --rm airflow-cli airflow $args }
+
 ### connect to SQL Server database and query 
 Invoke-SQLCmd -ServerInstance localhost -Database AdventureWorks2019 -Query "SELECT TOP 1 * FROM Person.Person"
  
