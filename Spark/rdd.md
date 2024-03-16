@@ -19,3 +19,7 @@ val value = columns.slice(1, columns.length).mkString(",")
 val pairs = createPairs(homeData)
 
 pairs.take(3).foreach(println)
+
+### convert an RDD to data frame
+import spark.implicits._
+val emailDF = splitEmailsRDD.toDF("messageId", "date", "from", "to", "emailBody")
