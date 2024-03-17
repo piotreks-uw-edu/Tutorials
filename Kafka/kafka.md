@@ -12,3 +12,6 @@ kafka-console-producer --bootstrap-server $BOOTSTRAP_SERVERS --topic piotreks-uw
 
 ### Start a console consumer using kafka-console-consumer and tell it to read from the topic your publisher is publishing into
 kafka-console-consumer --bootstrap-server $BOOTSTRAP_SERVERS --topic piotreks-uw-edu-topic --from-beginning
+
+### Create a topic with multiple partitions
+kafka-topics --create --bootstrap-server $BOOTSTRAP_SERVERS --replication-factor 1 --partitions 3 --topic piotreks-uw-edu-topic
