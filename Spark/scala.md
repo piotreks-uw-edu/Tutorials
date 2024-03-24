@@ -45,7 +45,7 @@ abfss://data-enron@bd510fall2021.dfs.core.windows.net/maildir/*/*/*
 
 ### Read a directory of text files from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI. Each file is read as a single record and returned in a key-value pair, where the key is the path of each file, the value is the content of each file. 
 ### ((a-hdfs-path/part-00000, its content), (a-hdfs-path/part-00001, its content), ...)
-val rdd = sc.sparkContext.wholeTextFile("hdfs://a-hdfs-path")
+val rdd = sc.wholeTextFile("hdfs://a-hdfs-path")
 
 
 
