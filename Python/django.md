@@ -2,7 +2,7 @@
 ```bash
 python manage.py dumpdata --exclude=auth --exclude=contenttypes > initial_data.json
 python manage.py dumpdata > initial_data.json
-python manage.py dumpdata quiz auth.User > initial_data.json
+python manage.py dumpdata quiz auth.User > test_data.json
 ```
 
 ### load data
