@@ -49,7 +49,7 @@ docker rmi -f image_name_or_id
 docker build -t yourimagename:tag .
 
 ### docker login
-docker login git.wat.edu.pl:5050
+docker login git.domain.edu.pl:5050
 
 ### build an image without explicitly creating a Dockerfile on disk
 docker run -it --name temp-container git.aaaa.edu.pl:3443/debian:11 /bin/bash
@@ -60,3 +60,6 @@ docker system prune -a
 ### creating a network between two containers on a single host
 docker network create my-network
 
+### publish image to registry
+docker build -t git.domain.edu.pl:5050/din/sid/docker/domain-cas/domain-cas-adfs:7.7.0.1 .
+docker push git.domain.edu.pl:5050/din/sid/docker/domain-cas/domain-cas-adfs:7.7.0.1

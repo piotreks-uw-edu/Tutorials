@@ -61,7 +61,7 @@ git config --local user.email "vector@test.com"
 git config --local user.name "Vector"
 
 # get user name
-git config user.name
+
 
 # call alias
 git graph

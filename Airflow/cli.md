@@ -1,5 +1,8 @@
 ### set an alias to run a container commands (I set it in wsl)
 echo "alias airflow='docker-compose run --rm airflow-cli airflow'" >> ~/.bashrc
+source ~/.bashrc
+
+### set an ali
 
 ### The airflow standalone command initializes the database, creates a user, and starts all components.
 airflow standalone

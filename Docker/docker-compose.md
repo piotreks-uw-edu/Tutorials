@@ -1,3 +1,6 @@
+### check status
+docker-compose ps
+
 ### run docker compose with build
 docker-compose up --build
 
@@ -13,4 +16,5 @@ docker-compose stop staging_srv
 ### remove the container
 docker-compose rm staging_srv
  
-
+### get lat ten lines of a log
+docker compose logs --tail 10 cas-tomcat
