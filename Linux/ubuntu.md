@@ -1,3 +1,6 @@
+### sleep
+sudo systemctl suspend
+
 # create a user account #
 sudo adduser jkuch
 
